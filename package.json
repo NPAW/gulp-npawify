@@ -1,0 +1,46 @@
+{
+  "name": "gulp-npawify",
+  "version": "1.0.0",
+  "description": "Gulp builder that packs browserify with sourcemaps, uglify and license",
+  "main": "dist/npawify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NPAW/gulp-npawify.git"
+  },
+  "keywords": [
+    "gulp",
+    "browserify",
+    "uglify",
+    "sourcemaps",
+    "license"
+  ],
+  "contributors": [
+    {
+      "name": "Jordi Aguilar"
+    },
+    {
+      "name": "Germán Robledo"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NPAW/gulp-npawify/issues"
+  },
+  "dependencies": {
+    "browserify": "13.1.1",
+    "convert-source-map": "1.3.0",
+    "gulp": "3.9.1",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "1.9.1",
+    "gulp-uglify": "2.0.0",
+    "gulp-util": "3.0.8",
+    "offset-sourcemap-lines": "1.0.0",
+    "through2": "2.0.3",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0",
+    "watchify": "3.8.0"
+  }
+}
