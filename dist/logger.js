@@ -7,13 +7,13 @@ var Logger = {
 
   start: function (file) {
     startTime = process.hrtime()
-    gutil.log('Starting ' + gutil.colors.green('Bundling', file) + '...')
+    gutil.log('Starting ' + gutil.colors.cyan(file) + '...')
   },
 
   end: function (file) {
     const taskTime = process.hrtime(startTime)
     const prettyTime = prettyHrtime(taskTime)
-    gutil.log('Finished ' + gutil.colors.yellow('bundling of', file) + ' in ' +
+    gutil.log('Finished ' + gutil.colors.green('bundling of ', file) + ' in ' +
       gutil.colors.magenta(prettyTime))
   },
 
