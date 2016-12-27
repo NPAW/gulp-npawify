@@ -1,6 +1,6 @@
 {
   "name": "gulp-npawify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Gulp builder that packs browserify with sourcemaps, uglify and license",
   "main": "dist/npawify.js",
   "scripts": {
