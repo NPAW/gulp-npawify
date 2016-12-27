@@ -13,18 +13,14 @@ npm install --save-dev gulp-npawify
 var gulp = require('gulp')
 var npawify = require('gulp-npawify')
 
-gulp.task('build', npawify({
+var options = {
   entry: 'src/youboralib.js',
   output: 'youboralib.min.js'
-}))
+}
 
-gulp.task('watch', npawify({
-  entry: 'src/youboralib.js',
-  output: 'youboralib.min.js',
-  watch: true
-}))
-
-gulp.task('default', ['watch'])
+gulp.task('build', npawify(options))
+gulp.task('watch', npawify(npawify.assign({}, options, { watch: true }))
+gulp.task('default', ['build'])
 ```
 
 ## Options
@@ -38,4 +34,7 @@ npawify receives an options object, that can receive:
 * `uglify`: If true, generated task file will be uglified. **Default:** true.
 * `license`: String containing license text. **Default:** undefined.
 
-
+## npawify.assign
+npawify comes with `npawify.assign()` which is a clone of
+[`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+function for its use with older Node versions

@@ -11,6 +11,7 @@ var uglify = require('gulp-uglify')
 
 var license = require('./license')
 var Logger = require('./logger')
+var assign = require('./assign')
 
 var defaults = {
   entry: 'src/index.js',
@@ -23,7 +24,7 @@ var defaults = {
 }
 
 var npawify = function (options) {
-  options = Object.assign({}, defaults, options)
+  options = assign({}, defaults, options)
 
   var bundler = browserify({
     entries: [options.entry],
@@ -59,5 +60,8 @@ var npawify = function (options) {
 
   return function () { rebundle() }
 }
+
+npawify.assign = assign
+npawify.Logger = Logger
 
 module.exports = npawify
