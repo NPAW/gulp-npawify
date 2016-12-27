@@ -47,7 +47,7 @@ var npawify = function (options) {
       .pipe(buffer())
       .pipe(rename(options.output))
       .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(options.uglify ? uglify({ compress: false, preserveComments: 'license' }) : throught.obj())
+      .pipe(options.uglify ? uglify({ compress: false, preserveComments: 'license' }) : through.obj())
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest(options.dest))
   }
