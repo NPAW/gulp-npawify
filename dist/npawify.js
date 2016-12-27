@@ -33,7 +33,7 @@ var npawify = function (options) {
   })
 
   var rebundle = function () {
-    Logger.start(options.entry)
+    Logger.start(options.output)
     if (options.license) {
       bundler.on('bundle', function () {
         bundler.pipeline.get('wrap').push(license(options.license))
@@ -43,7 +43,7 @@ var npawify = function (options) {
 
     return stream
       .on('error', Logger.error)
-      .on('end', Logger.end.bind(this, options.entry))
+      .on('end', Logger.end.bind(this, options.output))
       .pipe(source(options.entry))
       .pipe(buffer())
       .pipe(rename(options.output))
