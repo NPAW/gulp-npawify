@@ -35,6 +35,6 @@ npawify receives an options object, that can receive:
 * `license`: String containing license text. **Default:** undefined.
 
 ## npawify.assign
-npawify comes with `npawify.assign()` which is a clone of
+npawify comes with `npawify.assign()` which is a copy of
 [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
-function for its use with older Node versions
+ for its use with older Node versions.
