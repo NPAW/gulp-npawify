@@ -4,7 +4,7 @@
   "description": "Gulp builder that packs browserify with sourcemaps, uglify and license",
   "main": "dist/npawify.js",
   "scripts": {
-    "postpublish": "git push && git push --tags"
+    "prepublish": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
