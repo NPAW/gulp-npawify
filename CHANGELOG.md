@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [1.1.1] - 2017-01-10
+### Fixed
+- Fixed a bug with npawify.analyze
+
 ## [1.1.0] - 2017-01-10
 ### Changed
 - npawify() now supports multiple arguments, it will merge them using asssign.

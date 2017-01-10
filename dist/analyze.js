@@ -1,5 +1,5 @@
-module.exports = function (p) {
-  var file = fs.readFileSync(p)
+/** Accept file content as string. */
+module.exports = function (file) {
   var allgetters = ['getPlayhead', 'getPlayrate', 'getFramesPerSecond', 'getDroppedFrames',
     'getDuration', 'getBitrate', 'getThroughput', 'getRendition', 'getTitle', 'getTitle2',
     'getIsLive', 'getResource', 'getPosition']
