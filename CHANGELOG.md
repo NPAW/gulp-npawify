@@ -11,6 +11,7 @@
 
 ### Changed
 - Prepublish script to postpublish
+- using gulp@^3.9.1 instead of fixed 3.9.1
 
 ## [1.1.0] - 2017-01-10
 ### Changed
