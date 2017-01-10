@@ -19,9 +19,11 @@ var options = {
 }
 
 gulp.task('build', npawify(options))
-gulp.task('watch', npawify(npawify.assign({}, options, { watch: true }))
+gulp.task('watch', npawify(options, { watch: true })
 gulp.task('default', ['build'])
 ```
+
+Note: npawify supports multiple arguments, that will be merged using [assign](#npawifyassign). ie: `npawify(options, { watch: true })`.
 
 ## Options
 npawify receives an options object, that can receive:
@@ -35,6 +37,12 @@ npawify receives an options object, that can receive:
 * `license`: String containing license text. **Default:** undefined.
 
 ## npawify.assign
-npawify comes with `npawify.assign()` which is a copy of
+npawify comes with `npawify.assign()` which is a replica of
 [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
  for its use with older Node versions.
+
+## npawify.analyze
+This npawify function analyzes an adapter and returns an object containing its findings.
+
+## npawify.copyfiles
+Exposes [`copyfiles`](https://www.npmjs.com/package/copyfiles) package.

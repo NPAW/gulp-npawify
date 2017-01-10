@@ -8,10 +8,12 @@ var through = require('through2')
 var rename = require('gulp-rename')
 var sourcemaps = require('gulp-sourcemaps')
 var uglify = require('gulp-uglify')
+var copyfiles = require('copyfiles')
 
 var license = require('./license')
 var Logger = require('./logger')
 var assign = require('./assign')
+var analyze = require('./analyze')
 
 var defaults = {
   entry: 'src/index.js',
@@ -23,8 +25,12 @@ var defaults = {
   license: false
 }
 
-var npawify = function (options) {
-  options = assign({}, defaults, options)
+/** Accept multiple arguments, will join them using assign */
+var npawify = function () {
+  var args = Array.prototype.slice.call(arguments)
+  args.unshift({})
+
+  var options = assign.apply(this, args)
 
   var bundler = browserify({
     entries: [options.entry],
@@ -63,5 +69,7 @@ var npawify = function (options) {
 
 npawify.assign = assign
 npawify.Logger = Logger
+npawify.copyfiles = copyfiles
+npawify.analyze = analyze
 
 module.exports = npawify
