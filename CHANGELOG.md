@@ -2,7 +2,15 @@
 
 ## [1.1.1] - 2017-01-10
 ### Fixed
-- Fixed a bug with npawify.analyze
+- Fixed a bugs with npawify.analyze
+- Using gulp-sourcemaps 1.9.0 because 1.9.2+ versions generate wrong maps.
+
+### Added
+- .eslintrc file
+- JSDoc notation
+
+### Changed
+- Prepublish script to postpublish
 
 ## [1.1.0] - 2017-01-10
 ### Changed
@@ -14,7 +22,7 @@
 
 ## [1.0.5] - 2017-01-09
 ### Fixed
-- Using gulp-sourcemas 1.9.3 as 1.9.1 was removed from npm (wtf).
+- Using gulp-sourcemaps 1.9.3 as 1.9.1 was removed from npm (wtf).
 
 ## [1.0.4] - 2016-12-27
 ### Added

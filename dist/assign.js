@@ -1,3 +1,11 @@
+/**
+ * he assign() method is used to copy the values of all enumerable own properties from one or more
+ * source objects to a target object. It will return the target object.
+ *
+ * @param {Object} target
+ * @param {...Object} sources
+ * @returns {Object} The target object.
+ */
 module.exports = function (target) {
   if (target === undefined || target === null) {
     throw new TypeError('Cannot convert undefined or null to object')

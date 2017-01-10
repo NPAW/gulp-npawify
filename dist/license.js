@@ -1,4 +1,3 @@
-var pkg = require('../package.json')
 var through = require('through2')
 var offsetLines = require('offset-sourcemap-lines')
 var convert = require('convert-source-map')

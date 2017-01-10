@@ -16,7 +16,7 @@ var assign = require('./assign')
 var analyze = require('./analyze')
 
 var defaults = {
-  entry: 'src/index.js',
+  entry: './src/index.js',
   output: 'app.min.js',
   dest: './dist/',
   standalone: undefined,
@@ -25,9 +25,15 @@ var defaults = {
   license: false
 }
 
-/** Accept multiple arguments, will join them using assign */
+/**
+ * Funnels browserify, watchify, uglify, sourcemaps and license.
+ *
+ * @param {...Object} [options] Options. Will be merged using npawify.assign.
+ * @returns
+ */
 var npawify = function () {
   var args = Array.prototype.slice.call(arguments)
+  args.unshift(defaults)
   args.unshift({})
 
   var options = assign.apply(this, args)

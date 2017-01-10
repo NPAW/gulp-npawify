@@ -1,5 +1,12 @@
-/** Accept file content as string. */
-module.exports = function (file) {
+/**
+ * This npawify function analyzes an adapter and returns an object containing its findings.
+ *
+ * @param {String} file Contents of the file.
+ * @param {Object} [pkg] An object representing the package. ie: require('package.json')
+ * @returns {Object}
+ */
+module.exports = function (file, pkg) {
+  pkg = pkg || {}
   var allgetters = ['getPlayhead', 'getPlayrate', 'getFramesPerSecond', 'getDroppedFrames',
     'getDuration', 'getBitrate', 'getThroughput', 'getRendition', 'getTitle', 'getTitle2',
     'getIsLive', 'getResource', 'getPosition']
@@ -13,7 +20,7 @@ module.exports = function (file) {
   }
 
   var name = pkg.name
-  if (name.indexOf('youbora-adapter-') === 0) name = name.slice(16)
+  if (name && name.indexOf('youbora-adapter-') === 0) name = name.slice(16)
 
   return {
     name: name,
@@ -21,7 +28,6 @@ module.exports = function (file) {
     tech: 'js',
     author: pkg.author,
     version: pkg.version,
-    libVersion: lib.VERSION,
     built: new Date().toDateString(),
     features: {
       buffer: file.indexOf('fireBufferBegin') !== -1 ? 'native' : 'monitor',
