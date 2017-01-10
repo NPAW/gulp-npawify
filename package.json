@@ -1,7 +1,7 @@
 {
   "name": "gulp-npawify",
   "version": "1.1.0",
-  "description": "Gulp builder that packs browserify with sourcemaps, uglify and license",
+  "description": "NPAW's Gulp builder that packs browserify with sourcemaps, uglify and license",
   "main": "dist/npawify.js",
   "scripts": {
     "postpublish": "git push && git push --tags"
