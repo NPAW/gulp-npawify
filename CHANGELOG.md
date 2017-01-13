@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [1.1.2] - 2017-01-13
+### Changed
+- removed pkg attribute from analyze, should be added manually.
+
 ## [1.1.1] - 2017-01-10
 ### Fixed
 - Fixed a bugs with npawify.analyze
