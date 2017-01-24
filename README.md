@@ -36,6 +36,20 @@ npawify receives an options object, that can receive:
 * `uglify`: If true, generated task file will be uglified. **Default:** true.
 * `license`: String containing license text. **Default:** undefined.
 
+## npawify.sass
+Similar to what it does with browserify, npawify includes a pipeline for sass, sass-glob and autoprefixer.
+
+```js
+gulp.task('build', npawify.sass({ entry: '*.scss' }))
+```
+
+* `entry`: Array of the entry files, supports globs. **Default:** ['src/css/*.scss'].
+* `dest`: Name of the output folder. **Default:** 'dist/'.
+* `uglify`: If true, generated task file will be compressed, nested otherwise. **Default:** true.
+* `license`: String containing license text. **Default:** undefined.
+* `includePaths`: Include paths.  **Default:**  `['node_modules']`.
+* `autoprefixer`: Autoprefixer options.  **Default:**  `{ browsers: ['last 2 versions', '> 1%'] }`.
+
 ## npawify.assign
 npawify comes with `npawify.assign()` which is a replica of
 [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)

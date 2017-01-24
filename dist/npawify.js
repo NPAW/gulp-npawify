@@ -14,6 +14,7 @@ var license = require('./license')
 var Logger = require('./logger')
 var assign = require('./assign')
 var analyze = require('./analyze')
+var sass = require('./sass')
 
 var defaults = {
   entry: './src/index.js',
@@ -77,5 +78,6 @@ npawify.assign = assign
 npawify.Logger = Logger
 npawify.copyfiles = copyfiles
 npawify.analyze = analyze
+npawify.sass = sass
 
 module.exports = npawify
