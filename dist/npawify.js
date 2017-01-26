@@ -23,7 +23,8 @@ var defaults = {
   standalone: undefined,
   watch: false,
   uglify: true,
-  license: false
+  license: false,
+  transforms: []
 }
 
 /**
@@ -43,6 +44,10 @@ var npawify = function () {
     entries: [options.entry],
     standalone: options.standalone,
     debug: true
+  })
+
+  options.transforms.forEach(function (transform) {
+    bundler.transform(transform.name, transform.options)
   })
 
   var rebundle = function () {

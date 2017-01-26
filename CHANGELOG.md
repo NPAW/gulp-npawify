@@ -1,8 +1,12 @@
 ## [Unreleased]
 
+## [1.2.0] - 2017-01-26
+### Added
+- Transforms support.
+
 ## [1.2.0] - 2017-01-24
 ### Added
-- Sass support
+- Sass support.
 
 ## [1.1.2] - 2017-01-13
 ### Changed

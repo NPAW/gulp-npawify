@@ -35,6 +35,7 @@ npawify receives an options object, that can receive:
 * `watch`: If true, generated task will use watchify. **Default:** false.
 * `uglify`: If true, generated task file will be uglified. **Default:** true.
 * `license`: String containing license text. **Default:** undefined.
+* `transforms`: Collection of transforms to apply. ie: `[{ name: 'hbsfy', options: {} }]` **Default:** '[]'.
 
 ## npawify.sass
 Similar to what it does with browserify, npawify includes a pipeline for sass, sass-glob and autoprefixer.
