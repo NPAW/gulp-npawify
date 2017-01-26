@@ -15,6 +15,7 @@ var Logger = require('./logger')
 var assign = require('./assign')
 var analyze = require('./analyze')
 var sass = require('./sass')
+var browserSync = require('browser-sync')
 
 var defaults = {
   entry: './src/index.js',
@@ -24,6 +25,7 @@ var defaults = {
   watch: false,
   uglify: true,
   license: false,
+  browserSync: false,
   transforms: []
 }
 
@@ -69,6 +71,7 @@ var npawify = function () {
       .pipe(options.uglify ? uglify({ compress: false, preserveComments: 'license' }) : through.obj())
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest(options.dest))
+      .pipe(options.browserSync ? browserSync.stream() : through.obj())
   }
 
   if (options.watch) {
@@ -76,7 +79,7 @@ var npawify = function () {
     bundler.on('update', rebundle)
   }
 
-  return function () { rebundle() }
+  return function () { return rebundle() }
 }
 
 npawify.assign = assign
