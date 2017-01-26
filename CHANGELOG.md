@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [1.2.1] - 2017-01-26
+### Added
+- post-execution support.
+
 ## [1.2.0] - 2017-01-26
 ### Added
 - Transforms support.

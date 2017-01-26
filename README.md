@@ -34,7 +34,7 @@ npawify receives an options object, that can receive:
 * `standalone`: Browserify standalone option. **Default:** undefined.
 * `watch`: If true, generated task will use watchify. **Default:** false.
 * `uglify`: If true, generated task file will be uglified. **Default:** true.
-* `browserSync`: If true, browserSync.stream() will be called after browserify. **Default:** false.
+* `postPipe`: If a function is suplied, browserify will pipe into that. ie: `postPype: browserSync.stream`. **Default:** false.
 * `license`: String containing license text. **Default:** undefined.
 * `transforms`: Collection of transforms to apply. ie: `[{ name: 'hbsfy', options: {} }]` **Default:** '[]'.
 
