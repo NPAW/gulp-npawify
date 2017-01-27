@@ -47,17 +47,18 @@ var npawify = function () {
     debug: true
   })
 
+  if (options.license) {
+    bundler.on('bundle', function () {
+      bundler.pipeline.get('wrap').push(license(options.license))
+    })
+  }
+
   options.transforms.forEach(function (transform) {
     bundler.transform(transform.name, transform.options)
   })
 
   var rebundle = function () {
     Logger.start(options.output)
-    if (options.license) {
-      bundler.on('bundle', function () {
-        bundler.pipeline.get('wrap').push(license(options.license))
-      })
-    }
     var stream = bundler.bundle()
 
     return stream

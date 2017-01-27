@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [1.2.2] - 2017-01-27
+### Fixed
+- Fixed a bug with license and watchify
+
 ## [1.2.1] - 2017-01-26
 ### Added
 - post-execution support.
